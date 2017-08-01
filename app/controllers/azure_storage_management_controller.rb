@@ -1,10 +1,22 @@
 class AzureStorageManagementController < ApplicationController
   before_action :get_client
 
-  def auth
-    render text: @client.inspect.to_yaml 
+  def create
+    blobs = @client.blob_client
+    container = blobs.create_container('test-container')
+    content = ::File.open('test.jpg','rb') { |file|
+      file.read }
+    blobs.create_block_blob container.name, 'image-blob', content
+    render text: "Done creating file inside container: #{container.name}"
   end
 
+  def show
+    blobs = @client.blob_client
+
+    render plain: blobs.list_containers.inspect
+    #render plain: container.name.inspect
+
+  end
   private 
 
     def get_client
