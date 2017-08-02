@@ -39,6 +39,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    attr_encrypted (3.0.3)
+      encryptor (~> 3.0.0)
     awesome_print (1.8.0)
     azure-core (0.1.8)
       faraday (~> 0.9)
@@ -60,6 +62,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    encryptor (3.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
     faraday (0.12.2)
@@ -175,6 +178,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  attr_encrypted
   awesome_print
   azure-storage
   byebug
