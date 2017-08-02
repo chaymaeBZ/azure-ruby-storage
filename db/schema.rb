@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170802095009) do
+ActiveRecord::Schema.define(version: 20170802125303) do
 
   create_table "cloud_accounts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20170802095009) do
   end
 
   create_table "storages", force: :cascade do |t|
-    t.string   "name"
-    t.string   "key"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "encrypted_name"
+    t.string   "encrypted_key"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|
